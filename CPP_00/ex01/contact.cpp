@@ -6,13 +6,20 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:23:04 by user              #+#    #+#             */
-/*   Updated: 2021/08/20 07:13:50 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/20 17:12:29 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hh"
+#include "contact.hpp"
 
-void	set_informations()
+
+Contact::Contact()
 {
+	for (int i = 0; i < 5; i++)
+		std::cin >> this->_Data[i];
+}
 
+getData()
+{
+	return Contact::_Data;
 }
