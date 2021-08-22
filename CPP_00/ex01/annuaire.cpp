@@ -6,19 +6,19 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:40:06 by user              #+#    #+#             */
-/*   Updated: 2021/08/20 17:08:19 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/08/22 16:46:04 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "annuaire.hpp"
 
-void	Annuaire::add_contact()
+Contact	add_contact(Contact contact)
 {
-	if (this->n_contacts == 8)
-		std::cout << "Delete a contact before adding a new one" << std::endl;
-	else
-	{
-		Contact();
-		this->n_contacts++;
-	}
+	contact.set_first_name();
+	contact.set_last_name();
+	contact.set_nickname();
+	contact.set_phone_number();
+	contact.set_darkest_secret();
+	std::cout << "Contact " << contact.get_first_name() << " has been created" << std::endl;
+	return (contact);
 }
