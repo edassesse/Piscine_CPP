@@ -6,12 +6,12 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:23:04 by user              #+#    #+#             */
-/*   Updated: 2021/08/22 16:55:59 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/24 22:31:25 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
-
+#include "annuaire.hpp"
 
 Contact::Contact(void)
 {
@@ -23,8 +23,31 @@ Contact::~Contact(void)
 	return;
 }
 
+void	memory_full(Contact *contacts)
+{
+	int	index;
+
+	std::cout << "Phonebook is full, which contact would you like to replace? (0 to cancel)" << std::endl;
+	std::cin >> index;
+	if (index > 8 || index < 0)
+		while (index > 8 || index < 0)
+		{
+			std::cout << "Wrong input, please try again" << std::endl;
+			std::cin >> index;
+		}
+	if (index == 0)
+	{
+		std::cout << "No contact added nor replaced" << std::endl;
+		return;
+	}
+	contacts[index - 1] = add_contact(contacts[index - 1]);
+	return;
+}
+
 void	Contact::set_first_name(void)
 {
+	std::cout << "Please enter your first name: ";
+	std::cin >> this->_first_name;
 	while (this->_first_name.empty())
 	{
 		std::cout << "Please enter your first name: ";
@@ -43,6 +66,8 @@ void	Contact::set_first_name(void)
 
 void	Contact::set_last_name(void)
 {
+	std::cout << "Please enter your last name: ";
+	std::cin >> this->_last_name;
 	while (this->_last_name.empty())
 	{
 		std::cout << "Please enter your last name: ";
@@ -61,6 +86,8 @@ void	Contact::set_last_name(void)
 
 void	Contact::set_nickname(void)
 {
+	std::cout << "Please enter your nickname: ";
+	std::cin >> this->_nickname;
 	while (this->_nickname.empty())
 	{
 		std::cout << "Please enter your nickname: ";
@@ -71,6 +98,8 @@ void	Contact::set_nickname(void)
 
 void	Contact::set_phone_number(void)
 {
+	std::cout << "Please enter your phone number: ";
+	std::cin >> this->_phone_number;
 	while (this->_phone_number.empty())
 	{
 		std::cout << "Please enter your phone number: ";
@@ -83,6 +112,8 @@ void	Contact::set_phone_number(void)
 
 void	Contact::set_darkest_secret(void)
 {
+	std::cout << "Please enter your darkest secret: ";
+	std::cin >> this->_darkest_secret;
 	while (this->_darkest_secret.empty())
 	{
 		std::cout << "Please enter your darkest secret: ";

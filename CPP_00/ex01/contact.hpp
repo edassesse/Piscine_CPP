@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:23:33 by user              #+#    #+#             */
-/*   Updated: 2021/08/22 16:20:01 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/24 22:21:59 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class	Contact
 		void		set_nickname(void);
 		void		set_phone_number(void);
 		void		set_darkest_secret(void);
+		void		show(void)const;
 
 	private:
 
