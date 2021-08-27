@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:40:32 by user              #+#    #+#             */
-/*   Updated: 2021/08/24 22:22:06 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/27 10:39:16 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 # define ANNUAIRE_HPP
 
 # include <iostream>
+# include <string>
 # include "contact.hpp"
 
 		Contact	add_contact(Contact contact);
 		void	search(Contact *contacts, int n);
 		void	memory_full(Contact *contact);
+		void	show_search(Contact *contacts, int n);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:23:04 by user              #+#    #+#             */
-/*   Updated: 2021/08/24 22:31:25 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/27 10:39:35 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,23 @@ Contact::~Contact(void)
 
 void	memory_full(Contact *contacts)
 {
-	int	index;
+	int			index;
+	std::string	s_index;
 
+	index = -1;
 	std::cout << "Phonebook is full, which contact would you like to replace? (0 to cancel)" << std::endl;
-	std::cin >> index;
-	if (index > 8 || index < 0)
-		while (index > 8 || index < 0)
+	show_search(contacts, 8);
+	while (index > 8 || index < 1)
+	{
+		std::getline(std::cin, s_index);
+		if (s_index.find_first_not_of("0123456789") == std::string::npos)
 		{
-			std::cout << "Wrong input, please try again" << std::endl;
-			std::cin >> index;
+			index = std::stoi(s_index);
+			if (index <= 8 && index >=1)
+				break;
 		}
+		std::cout << "Wrong input, please try again" << std::endl;
+	}
 	if (index == 0)
 	{
 		std::cout << "No contact added nor replaced" << std::endl;
@@ -46,78 +53,60 @@ void	memory_full(Contact *contacts)
 
 void	Contact::set_first_name(void)
 {
-	std::cout << "Please enter your first name: ";
-	std::cin >> this->_first_name;
+	this->_first_name = "";
 	while (this->_first_name.empty())
 	{
 		std::cout << "Please enter your first name: ";
-		std::cin >> this->_first_name;
-		for (int i = 0; this->_first_name[i]; i++)
-		{
-			if (!isalpha(this->_first_name[i]) && !strchr(" -", this->_first_name[i]))
-			{
-				this->_first_name = "";
-				break;
-			}
-		}
+		std::getline(std::cin, this->_first_name);
 	}
 	return;
 }
 
 void	Contact::set_last_name(void)
 {
-	std::cout << "Please enter your last name: ";
-	std::cin >> this->_last_name;
+	this->_last_name = "";
 	while (this->_last_name.empty())
 	{
 		std::cout << "Please enter your last name: ";
-		std::cin >> this->_last_name;
-		for (int i = 0; this->_last_name[i]; i++)
-		{
-			if (!isalpha(this->_last_name[i]) && !strchr(" -", this->_last_name[i]))
-			{
-				this->_last_name = "";
-				break;
-			}
-		}
+		std::getline(std::cin, this->_last_name);
 	}
 	return;
 }
 
 void	Contact::set_nickname(void)
 {
-	std::cout << "Please enter your nickname: ";
-	std::cin >> this->_nickname;
+	this->_nickname = "";
 	while (this->_nickname.empty())
 	{
 		std::cout << "Please enter your nickname: ";
-		std::cin >> this->_nickname;
+		std::getline(std::cin, this->_nickname);
 	}
 	return;
 }
 
 void	Contact::set_phone_number(void)
 {
-	std::cout << "Please enter your phone number: ";
-	std::cin >> this->_phone_number;
+	this->_phone_number = "";
 	while (this->_phone_number.empty())
 	{
 		std::cout << "Please enter your phone number: ";
-		std::cin >> this->_phone_number;
-		if (!this->_phone_number.find_first_not_of("0123456789"))
+		std::getline(std::cin, this->_phone_number);
+		if (this->_phone_number.find_first_not_of("0123456789") != std::string::npos)
+		{
+			std::cout << "Not a valid phone number" << std::endl;
 			this->_phone_number = "";
+		}
 	}
 	return;
 }
 
 void	Contact::set_darkest_secret(void)
 {
-	std::cout << "Please enter your darkest secret: ";
-	std::cin >> this->_darkest_secret;
+	this->_darkest_secret = "";
 	while (this->_darkest_secret.empty())
 	{
 		std::cout << "Please enter your darkest secret: ";
-		std::cin >> this->_darkest_secret;
+		std::getline(std::cin, this->_darkest_secret);
 		std::cout << std::endl;
 	}
 	return;

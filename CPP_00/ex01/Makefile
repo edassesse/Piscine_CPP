@@ -6,7 +6,7 @@
 #    By: user <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 06:11:09 by user              #+#    #+#              #
-#    Updated: 2021/08/20 06:12:49 by user             ###   ########lyon.fr    #
+#    Updated: 2021/08/26 17:01:16 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= phonebook
-OBJS	= $(SRCS:.c=.o)
+HEADERS     = annuaire.hpp contact.hpp 
+OBJS	= $(SRCS:.cpp=.o)
 SRCS		= main.cpp annuaire.cpp contact.cpp
 RM			= rm -f
 CC			= clang++
@@ -34,7 +35,7 @@ CFLAGS		= -Wall -Werror -Wextra
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADERS)
 					@printf "$(ERASE)"
 					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
@@ -44,7 +45,7 @@ clean :
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean
-					@rm -f $(NAME)
+					@rm -f $(NAME) $(OBJS)
 					@echo "$(RED)Fclean $(NAME) Succes !$(END)"
 
 re:					fclean all

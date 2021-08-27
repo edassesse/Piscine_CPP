@@ -6,11 +6,13 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:40:06 by user              #+#    #+#             */
-/*   Updated: 2021/08/24 22:11:22 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/27 10:44:23 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "annuaire.hpp"
+#include <string>
+#include <cstdlib>
 
 Contact	add_contact(Contact contact)
 {
@@ -63,7 +65,9 @@ void	Contact::show(void)const
 void	search(Contact *contacts, int n)
 {
 	int	index;
+	std::string	s_index;
 
+	index = -1;
 	if (n == 0)
 	{
 		std::cout << "Your phonebook is empty, add a contact by using the ADD command" << std::endl;
@@ -71,9 +75,14 @@ void	search(Contact *contacts, int n)
 	}
 	show_search(contacts, n);
 	std::cout << "Which contact would you like to see?" << std::endl;
-	std::cin >> index;
-	if (index - 1 > n || index < 1)
-		std::cout << "Enter a valid contact index" << std::endl;
+	while (index > n || index < 1)
+	{
+		std::getline(std::cin, s_index);
+		if (s_index.find_first_not_of("0123456789") == std::string::npos)
+			index = std::stoi(s_index);
+		if (index > n || index < 1)
+			std::cout << "Enter a valid contact index" << std::endl;
+	}
 	contacts[index - 1].show();
 	return;
 }

@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:23:33 by user              #+#    #+#             */
-/*   Updated: 2021/08/24 22:21:59 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/26 16:59:41 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
+# include <string>
 
 class	Contact
 {
