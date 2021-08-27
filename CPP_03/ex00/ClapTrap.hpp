@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/24 18:18:43 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/27 11:34:18 by edassess         ###   ########lyon.fr   */
+/*   Created: 2021/08/27 11:38:20 by edassess          #+#    #+#             */
+/*   Updated: 2021/08/27 11:43:53 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-int main(void) {
-Fixed a;
-Fixed b(Fixed(5.05f) * Fixed(2));
-std::cout << a << std::endl;
-std::cout << --a << std::endl;
-std::cout << a << std::endl;
-std::cout << a-- << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max(a, b) << std::endl;
-return 0;
-}
+# include <iostream>
+
+class	ClapTrap
+{
+	public:
+		Fixed(std::string name);
+		Fixed(Fixed const &src);
+		~Fixed(void);
+
+		Fixed	&operator=(Fixed const &rhs);
+		void	attack(std::string const &target);
+		void	takeDamage(unsigned int amout);
+		void	beRepaired(unsigned int amount);
+
+	private:
+		_name;
+		_hp;
+		_energy_point;
+		_ad;
+};
+
+#endif

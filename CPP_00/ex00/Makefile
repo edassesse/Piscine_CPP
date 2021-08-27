@@ -6,7 +6,7 @@
 #    By: user <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/20 02:39:49 by user              #+#    #+#              #
-#    Updated: 2021/08/20 06:08:28 by user             ###   ########lyon.fr    #
+#    Updated: 2021/08/27 10:54:28 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,22 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= megaphone
-OBJS	= $(SRCS:.c=.o)
+OBJS	= $(SRCS:.cpp=.o)
 SRCS		= megaphone.cpp
 RM			= rm -f
 CC			= clang++
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=98
 
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) 
 					@printf "$(ERASE)"
 					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
-					@rm -rf $(OBJS_PATH)
+					@rm -rf $(OBJS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean

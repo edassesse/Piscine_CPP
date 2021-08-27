@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:16:24 by user              #+#    #+#             */
-/*   Updated: 2021/08/26 14:13:21 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/25 19:58:28 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,68 +69,6 @@ Fixed	&Fixed::operator=(Fixed const & rhs)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->_value = rhs._value;
-	return *this;
-}
-
-int		Fixed::operator>(Fixed const &rhs)const
-{
-	return (this->toFloat() > rhs.toFloat());
-}
-
-int		Fixed::operator<(Fixed const &rhs)const
-{
-	return (this->toFloat() < rhs.toFloat());
-}
-
-int		Fixed::operator>=(Fixed const &rhs)const
-{
-	return (this->toFloat() >= rhs.toFloat());
-}
-
-int		Fixed::operator<=(Fixed const &rhs)const
-{
-	return (this->toFloat() <= rhs.toFloat());
-}
-
-int		Fixed::operator==(Fixed const &rhs)const
-{
-	return (this->toFloat() == rhs.toFloat());
-}
-
-int		Fixed::operator!=(Fixed const &rhs)const
-{
-	return (this->toFloat() != rhs.toFloat());
-}
-
-float	Fixed::operator+(Fixed const &rhs)const
-{
-	return (this->toFloat() + rhs.toFloat());
-}
-
-float	Fixed::operator-(Fixed const &rhs)const
-{
-	return (this->toFloat() - rhs.toFloat());
-}
-
-float	Fixed::operator*(Fixed const &rhs)const
-{
-	return (this->toFloat() * rhs.toFloat());
-}
-
-float	Fixed::operator/(Fixed const &rhs)const
-{
-	return (this->toFloat() / rhs.toFloat());
-}
-
-Fixed	Fixed::operator++(void)
-{
-	this->_value = this->_value + 1;
-	return this;
-}
-
-Fixed	&Fixed::operator--(void)
-{
-	this->_value = this->_value - 1;
 	return *this;
 }
 

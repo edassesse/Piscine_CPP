@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 14:00:14 by edassess          #+#    #+#              #
-#    Updated: 2021/08/24 14:55:12 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/08/27 11:12:27 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= replace
-OBJS	= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
 SRCS		= main.cpp
 RM			= rm -f
 CC			= clang++
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=98
 
 all:
 					@$(MAKE) $(NAME)
@@ -40,7 +40,7 @@ $(NAME): $(OBJS)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
-					@rm -rf $(OBJS_PATH)
+					@rm -rf $(OBJS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean

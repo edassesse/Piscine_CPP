@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 14:00:14 by edassess          #+#    #+#              #
-#    Updated: 2021/08/24 16:34:02 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/08/27 11:14:26 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,23 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= Karen
-OBJS	= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
+HEADER		= Karen.hpp
 SRCS		= main.cpp Karen.cpp
 RM			= rm -f
 CC			= clang++
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=98
 
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 					@printf "$(ERASE)"
 					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
-					@rm -rf $(OBJS_PATH)
+					@rm -rf $(OBJS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean

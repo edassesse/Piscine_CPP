@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:16:24 by user              #+#    #+#             */
-/*   Updated: 2021/08/25 19:58:28 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/27 11:33:30 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,99 @@ Fixed	&Fixed::operator=(Fixed const & rhs)
 	return *this;
 }
 
+int		Fixed::operator>(Fixed const &rhs)const
+{
+	return (this->toFloat() > rhs.toFloat());
+}
+
+int		Fixed::operator<(Fixed const &rhs)const
+{
+	return (this->toFloat() < rhs.toFloat());
+}
+
+int		Fixed::operator>=(Fixed const &rhs)const
+{
+	return (this->toFloat() >= rhs.toFloat());
+}
+
+int		Fixed::operator<=(Fixed const &rhs)const
+{
+	return (this->toFloat() <= rhs.toFloat());
+}
+
+int		Fixed::operator==(Fixed const &rhs)const
+{
+	return (this->toFloat() == rhs.toFloat());
+}
+
+int		Fixed::operator!=(Fixed const &rhs)const
+{
+	return (this->toFloat() != rhs.toFloat());
+}
+
+float	Fixed::operator+(Fixed const &rhs)const
+{
+	return (this->toFloat() + rhs.toFloat());
+}
+
+float	Fixed::operator-(Fixed const &rhs)const
+{
+	return (this->toFloat() - rhs.toFloat());
+}
+
+float	Fixed::operator*(Fixed const &rhs)const
+{
+	return (this->toFloat() * rhs.toFloat());
+}
+
+float	Fixed::operator/(Fixed const &rhs)const
+{
+	return (this->toFloat() / rhs.toFloat());
+}
+
+Fixed	&Fixed::operator++(void)
+{
+	this->_value = this->_value + 1;
+	return *this;
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	tmp = *this;
+	++*this;
+	return (tmp);
+}
+
+Fixed	&Fixed::operator--(void)
+{
+	this->_value = this->_value - 1;
+	return *this;
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	tmp = *this;
+	--*this;
+	return (tmp);
+}
+
 std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
 {
 	o << rhs.toFloat();
 	return o;
+}
+
+
+int		Fixed::max(Fixed &lhs, Fixed &rhs)
+{
+	if (lhs > rhs)
+		return (lhs.toInt());
+	return (rhs.toInt());
+}
+
+int		Fixed::min(Fixed &lhs, Fixed &rhs)
+{
+	if (lhs < rhs)
+		return (lhs.toInt());
+	return (rhs.toInt());
 }

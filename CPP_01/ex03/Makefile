@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 14:00:14 by edassess          #+#    #+#              #
-#    Updated: 2021/08/23 18:35:06 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/08/27 11:09:59 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,23 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= retarded_human
-OBJS	= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
+HEADER		= HumanA.hpp HumanB.hpp Weapon.hpp
 SRCS		= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 RM			= rm -f
 CC			= clang++
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=98
 
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 					@printf "$(ERASE)"
 					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
-					@rm -rf $(OBJS_PATH)
+					@rm -rf $(OBJS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean

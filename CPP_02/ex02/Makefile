@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 14:00:14 by edassess          #+#    #+#              #
-#    Updated: 2021/08/24 18:18:37 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/08/27 11:18:29 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= fixed_point
-OBJS	= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.cpp=.o)
+HEADER		= Fixed.hpp
 SRCS		= main.cpp Fixed.cpp
 RM			= rm -f
 CC			= clang++
@@ -34,13 +35,13 @@ CFLAGS		= -Wall -Werror -Wextra
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 					@printf "$(ERASE)"
 					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
-					@rm -rf $(OBJS_PATH)
+					@rm -rf $(OBJS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean

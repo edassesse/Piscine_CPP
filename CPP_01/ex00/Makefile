@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 14:00:14 by edassess          #+#    #+#              #
-#    Updated: 2021/08/23 14:29:50 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/08/27 10:54:02 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,22 +25,23 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= BraiiiiiiinnnzzzZ
-OBJS	= $(SRCS:.c=.o)
-SRCS		= main.cpp zombie.cpp
+HEADER		= Zombie.hpp
+OBJS		= $(SRCS:.cpp=.o)
+SRCS		= main.cpp Zombie.cpp
 RM			= rm -f
 CC			= clang++
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=98
 
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 					@printf "$(ERASE)"
 					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
-					@rm -rf $(OBJS_PATH)
+					@$(RM) $(OBJS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean

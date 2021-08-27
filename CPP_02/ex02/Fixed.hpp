@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 18:19:09 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/26 14:13:27 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/27 11:31:43 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,22 @@ class	Fixed
 		float	toFloat(void)const;
 		int		toInt(void)const;
 		Fixed	&operator=(Fixed const &rhs);
+		int		operator>(Fixed const &rhs)const;
+		int		operator<(Fixed const &rhs)const;
+		int		operator>=(Fixed const &rhs)const;
+		int		operator<=(Fixed const &rhs)const;
+		int		operator==(Fixed const &rhs)const;
+		int		operator!=(Fixed const &rhs)const;
+		float	operator+(Fixed const &rhs)const;
+		float	operator-(Fixed const &rhs)const;
+		float	operator*(Fixed const &rhs)const;
+		float	operator/(Fixed const &rhs)const;
+		Fixed	&operator++(void);
+		Fixed	operator++(int);
+		Fixed	&operator--(void);
+		Fixed	operator--(int);
+		static int	max(Fixed &lhs, Fixed &rhs);
+		static int	min(Fixed &lhs, Fixed &rhs);
 
 	private:
 		int			_value;

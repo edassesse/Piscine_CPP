@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 14:50:33 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/24 15:54:42 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/08/27 11:11:34 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	replace(std::string file_name, std::string s1, std::string s2)
 		index = n_string.find(s1);
 	}
 	ofs << n_string;
-	std::cout << n_string << std::endl;
 }
 
 int main(int ac, char **av)
