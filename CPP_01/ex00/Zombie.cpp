@@ -6,14 +6,21 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 14:09:54 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/23 15:14:33 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/08/28 15:46:55 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie::Zombie(void)
+{
+	std::cout << "Constructor called" << std::endl;
+	return;
+}
+
 Zombie::Zombie(std::string name)
 {
+	std::cout << "Constructor for " << name << " called" << std::endl;
 	this->_name = name;
 	return;
 }
