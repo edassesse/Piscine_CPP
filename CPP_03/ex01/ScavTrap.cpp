@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/27 11:37:32 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/28 16:02:05 by edassess         ###   ########lyon.fr   */
+/*   Created: 2021/08/28 16:02:46 by edassess          #+#    #+#             */
+/*   Updated: 2021/08/28 16:05:47 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main()
+void	ScavTrap::guardGate(void)
 {
-	ClapTrap	oui("oui");
-
-	oui.attack("bonjour");
-	oui.takeDamage(15);
-	oui.beRepaired(15);
+	std::cout << this->_name << " has entered Gatekeeper mode" << std::endl;
 }
