@@ -19,15 +19,16 @@ int main()
 	Zombie	*non = new Zombie("non");
 	Zombie	*oui1 = new Zombie("oui1");
 	Zombie	*oui2 = new Zombie("oui2");
-	Zombie	*oui3 = new Zombie("oui3");
+	Zombie	*random = random->newZombie("oui4");
+
+	oui.randomChump("ROBERT");
 	non->announce();
 	oui1->announce();
 	oui2->announce();
-	oui3->announce();
-	randomChump("Bonjour");
+	random->announce();
 	delete non;
 	delete oui1;
 	delete oui2;
-	delete oui3;
+	delete random;
 	return 0;
 }

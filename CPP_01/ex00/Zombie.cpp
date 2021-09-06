@@ -43,11 +43,10 @@ Zombie*	Zombie::newZombie(std::string name)
 	return (new_zombie);
 }
 
-void	randomChump(std::string name)
+void	Zombie::randomChump(std::string name)
 {
-	Zombie	*new_zombie = new Zombie(name);
+	Zombie new_zombie(name);
 
-	new_zombie->announce();
-	delete new_zombie;
+	new_zombie.announce();
 	return;
 }

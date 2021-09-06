@@ -36,7 +36,7 @@ Zombie*	Zombie::newZombie(std::string name)
 	return (new_zombie);
 }
 
-void	randomChump(std::string name)
+void	Zombie::randomChump(std::string name)
 {
 	Zombie	*random_zombie = new Zombie();
 
@@ -49,4 +49,16 @@ void	Zombie::set_name(std::string name)
 {
 	this->_name = name;
 	return;
+}
+
+Zombie* Zombie::zombieHorde(int n, std::string name)
+{
+	if (n > 0)
+	{
+	Zombie	*new_zombies = new Zombie[n];
+		for (int i = 0; i < n; i++)
+			new_zombies[i].set_name(name);
+	return new_zombies;
+	}
+	return nullptr;
 }

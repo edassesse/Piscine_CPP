@@ -24,6 +24,7 @@ class	HumanA
 		void	attack(void);
 
 	private:
+		HumanA(void);
 		std::string	_name;
 		Weapon		&_weapon;
 };

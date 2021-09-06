@@ -20,6 +20,7 @@ HumanA::HumanA(std::string name, Weapon &type) : _weapon(type)
 
 HumanA::~HumanA(void)
 {
+	std::cout << "Bye frerot" <<std::endl;
 	return;
 }
 

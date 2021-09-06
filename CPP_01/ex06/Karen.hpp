@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:08:03 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/24 16:48:38 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/06 15:47:17 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Karen
 		~Karen(void);
 
 		void	complain(std::string level);
-		void	karenFilter(int level);
+		void	karenFilter(std::string level);
 		void	innit(void);
 
 	private:

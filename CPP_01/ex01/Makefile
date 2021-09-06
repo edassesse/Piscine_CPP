@@ -27,7 +27,7 @@ END			=	\033[0m
 NAME		= BraiiiiiiinnnzzzZ
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= Zombie.hpp
-SRCS		= main.cpp Zombie.cpp ZombieHorde.cpp
+SRCS		= main.cpp Zombie.cpp
 RM			= rm -f
 CC			= clang++
 CFLAGS		= -Wall -Werror -Wextra -std=98

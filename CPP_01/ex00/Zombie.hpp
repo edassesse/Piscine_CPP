@@ -24,11 +24,11 @@ class Zombie
 
 		void	announce(void)const;
 		Zombie*	newZombie(std::string name);
+		void	randomChump(std::string name);
 
 	private:
 		std::string	_name;
+		
 };
-
-		void	randomChump(std::string name);
 
 #endif
