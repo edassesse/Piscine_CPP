@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:09:57 by edassess          #+#    #+#             */
-/*   Updated: 2021/09/06 15:53:53 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/07 15:46:46 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	Karen::karenFilter(std::string level)
 		case 4:
 			(this->*_fct[3])();
 			break;
-		case 5:
+		default:
 			this->insignificant();
 			break;
 	}

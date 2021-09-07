@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:09:57 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/24 16:37:10 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/07 15:46:02 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ Karen::Karen(void)
 	this->_level[1] = "INFO";
 	this->_level[2] = "WARNING";
 	this->_level[3] = "ERROR";
+	std::cout << "Karen Constructor called" << std::endl;
 }
 
 Karen::~Karen(void)
 {
+	std::cout << "Karen Destructor called" << std::endl;
 	return;
 }
 
@@ -59,5 +61,5 @@ void	Karen::complain(std::string level)
 			return;
 		}
 	}
-	std::cout << "Not a valid command" << std::endl;
+	std::cout << "Probably complaining about insignificant problems" << std::endl;
 }
