@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 11:38:12 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/28 20:11:49 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/28 20:49:21 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 	{
+		this->_hp = 0;
 		std::cout << "ClapTrap " << this->_name << " is almost dead" << std::endl;
 		this->beRepaired(10);
 		std::cout << "Luckily he repared himself before it was too late 😌" << std::endl;

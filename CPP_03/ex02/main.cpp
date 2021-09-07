@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/28 16:02:54 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/28 20:00:40 by user             ###   ########lyon.fr   */
+/*   Created: 2021/08/27 11:37:32 by edassess          #+#    #+#             */
+/*   Updated: 2021/08/28 20:31:50 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-# include "ClapTrap.hpp"
-
-class	ScavTrap : public ClapTrap
+int main()
 {
-	public:
-		ScavTrap(void);
-		ScavTrap(std::string name);
-		ScavTrap(ScavTrap const &src);
-		~ScavTrap(void);
+	ClapTrap	oui("oui");
+	ScavTrap	non("non");
+	FragTrap	peut_etre("peut_etre");
 
-		ScavTrap	&operator=(ScavTrap const &rhs);
-		void		attack(std::string const &target);
-		void		guardGate(void);
-
-	private:
-};
-
-#endif
+	oui.attack("bonjour");
+	oui.takeDamage(15);
+	oui.beRepaired(15);
+	non.attack("bonjour");
+	non.takeDamage(15);
+	non.beRepaired(15);
+	non.guardGate();
+	peut_etre.highFivesGuys();
+}

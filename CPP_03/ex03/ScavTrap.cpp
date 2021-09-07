@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 16:02:46 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/28 20:24:19 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/08/28 20:45:43 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,6 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "ScavTrap Destructor called" << std::endl;
 }
 
-void	ScavTrap::attack(std::string const &target)
-{
-	std::cout << "ScavTrap " << this->_name << " attacks " << target << std::endl;
-}
-
 ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 {
 	std::cout << "ScavTrap Assignation operator called" << std::endl;
@@ -50,6 +45,11 @@ ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs)
 	this->_energy_point = rhs._energy_point;
 	this->_ad = rhs._ad;
 	return *this;
+}
+
+void	ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << std::endl;
 }
 
 void	ScavTrap::guardGate(void)
