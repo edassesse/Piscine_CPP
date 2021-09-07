@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/23 14:00:14 by edassess          #+#    #+#              #
-#    Updated: 2021/08/27 11:03:26 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/09/06 19:26:48 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ END			=	\033[0m
 NAME		= BraiiiiiiinnnzzzZ
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= Zombie.hpp
-SRCS		= main.cpp Zombie.cpp
+SRCS		= main.cpp Zombie.cpp ZombieHorde.cpp
 RM			= rm -f
 CC			= clang++
 CFLAGS		= -Wall -Werror -Wextra -std=98
