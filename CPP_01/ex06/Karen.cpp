@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 16:09:57 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/24 16:54:17 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/06 15:53:53 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,25 @@ void	Karen::complain(std::string level)
 	this->insignificant();
 }
 
-void	Karen::karenFilter(int level)
+void	Karen::karenFilter(std::string level)
 {
-
-	level--;
-	if (level > 4)
-		level = 4;
-	this->innit();
-	while (--level >= 0)
-		this->_fct[level] = &Karen::insignificant;
+	int	i = 0;
+	while (level != this->_level[i++] && i < 5)
+		;
+	switch(i)
+	{
+		case 1:
+			(this->*_fct[0])();
+		case 2:
+			(this->*_fct[1])();
+		case 3:
+			(this->*_fct[2])();
+		case 4:
+			(this->*_fct[3])();
+			break;
+		case 5:
+			this->insignificant();
+			break;
+	}
 	return;
 }

@@ -6,47 +6,42 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 14:09:54 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/23 17:10:48 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/06 19:28:51 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie(void) : _name("Default")
 {
+	std::cout << "Default Constructor called" << std::endl;
+	return;
+}
+
+Zombie::Zombie(std::string name)
+{
+	std::cout << "Constructor for " << name << " called" << std::endl;
+	this->_name = name;
 	return;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->_name << " destroyed" << std::endl;
+	std::cout << this->_name << " Deleted" << std::endl;
 	return;
 }
 
-void	Zombie::announce(void)const
+void		Zombie::announce(void)const
 {
 	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie*	Zombie::newZombie(std::string name)
-{
-	Zombie	*new_zombie = new Zombie();
-
-	this->_name = name;
-	return (new_zombie);
-}
-
-void	randomChump(std::string name)
-{
-	Zombie	*random_zombie = new Zombie();
-
-	random_zombie->set_name(name);
-	random_zombie->announce();
-	delete random_zombie;
-}
-
-void	Zombie::set_name(std::string name)
+void		Zombie::setName(std::string name)
 {
 	this->_name = name;
 	return;
+}
+std::string	Zombie::getName(void)const
+{
+	return this->_name;
 }

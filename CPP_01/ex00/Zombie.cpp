@@ -6,15 +6,15 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 14:09:54 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/28 15:46:55 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/06 19:22:24 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void)
+Zombie::Zombie(void) : _name("Default")
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Default Constructor called" << std::endl;
 	return;
 }
 
@@ -34,20 +34,4 @@ Zombie::~Zombie(void)
 void	Zombie::announce(void)const
 {
 	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie*	Zombie::newZombie(std::string name)
-{
-	Zombie	*new_zombie = new Zombie(name);
-
-	return (new_zombie);
-}
-
-void	randomChump(std::string name)
-{
-	Zombie	*new_zombie = new Zombie(name);
-
-	new_zombie->announce();
-	delete new_zombie;
-	return;
 }

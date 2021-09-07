@@ -6,7 +6,7 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 17:30:53 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/23 17:46:54 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/06 18:37:51 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 	std::string&	brainsRef = brains;
 
 	std::cout << "string address == " << &brains << std::endl;
-	std::cout << "Ptr address == " << &brainsPtr << std::endl;
+	std::cout << "Ptr address == " << brainsPtr << std::endl;
 	std::cout << "Ref address == " << &brainsRef << std::endl;
 	std::cout << "string value == " << brains << std::endl;
 	std::cout << "Ptr value == " << *brainsPtr << std::endl;
