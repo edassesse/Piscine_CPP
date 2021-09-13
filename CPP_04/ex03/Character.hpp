@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 15:59:02 by edassess          #+#    #+#             */
-/*   Updated: 2021/09/13 15:18:01 by edassess         ###   ########lyon.fr   */
+/*   Created: 2021/09/13 15:14:07 by edassess          #+#    #+#             */
+/*   Updated: 2021/09/13 15:18:07 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-#include <iostream>
-
-class AMateria
+class Character
 {
-	protected:
-		std::string	_type;
+	private:
+		std::string	_name;
 
 	public:
-		AMateria(void);
-		AMateria(std::string const &type);
-		AMateria(AMateria const &rhs);
-		~AMateria(void);
-
-		std::string const & getType(void)const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual ~Character() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, Character& target) = 0;
 };
 
 #endif
