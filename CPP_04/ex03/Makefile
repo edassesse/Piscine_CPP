@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 15:52:32 by edassess          #+#    #+#              #
-#    Updated: 2021/09/14 14:59:12 by user             ###   ########lyon.fr    #
+#    Updated: 2021/09/14 17:08:41 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		= oueoueoue
+NAME		= materia
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp Ice.hpp MateriaSource.hpp
 SRCS		= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
@@ -35,9 +35,9 @@ CFLAGS		= -Wall -Werror -Wextra
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS) $(HEADER)
+$(NAME):			$(OBJS) $(HEADER)
 					@printf "$(ERASE)"
-					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :
