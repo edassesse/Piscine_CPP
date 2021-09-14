@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 15:52:32 by edassess          #+#    #+#              #
-#    Updated: 2021/09/01 11:00:46 by user             ###   ########lyon.fr    #
+#    Updated: 2021/09/14 14:59:12 by user             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		= zoo
+NAME		= oueoueoue
 OBJS		= $(SRCS:.cpp=.o)
-HEADER		= Animal.hpp Dog.hpp Cat.hpp Brain.hpp
-SRCS		= main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
+HEADER		= AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp Ice.hpp MateriaSource.hpp
+SRCS		= main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 RM			= rm -f
 CC			= clang++
 CFLAGS		= -Wall -Werror -Wextra

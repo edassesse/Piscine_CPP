@@ -6,9 +6,14 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 11:05:40 by user              #+#    #+#             */
-/*   Updated: 2021/09/01 11:05:56 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/14 14:47:39 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {
