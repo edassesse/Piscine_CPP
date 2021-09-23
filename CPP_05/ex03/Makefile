@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 15:52:32 by edassess          #+#    #+#              #
-#    Updated: 2021/09/17 13:38:19 by edassess         ###   ########lyon.fr    #
+#    Updated: 2021/09/20 13:53:11 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,10 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		= yes
+NAME		= bureaucrat
 OBJS		= $(SRCS:.cpp=.o)
-HEADER		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
-SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+HEADER		= Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 RM			= rm -f
 CC			= clang++
 CFLAGS		= -Wall -Werror -Wextra
@@ -35,9 +35,9 @@ CFLAGS		= -Wall -Werror -Wextra
 all:
 					@$(MAKE) $(NAME)
 
-$(NAME): $(OBJS) $(HEADER)
+$(NAME):			$(OBJS) $(HEADER)
 					@printf "$(ERASE)"
-					$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 clean :

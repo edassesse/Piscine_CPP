@@ -6,20 +6,21 @@
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 11:38:12 by edassess          #+#    #+#             */
-/*   Updated: 2021/08/28 20:13:03 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/17 13:43:09 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : _name("Default"), _hp (10), _energy_point(10), _ad(10)
 {
+	std::cout << "Default constructor called" << std::endl;
 	return;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _energy_point(10), _ad(10)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap constructor for " << name << " called" << std::endl;
 	return;
 }
 

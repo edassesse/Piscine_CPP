@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edassess <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/20 11:36:41 by edassess          #+#    #+#             */
-/*   Updated: 2021/09/20 11:38:16 by edassess         ###   ########lyon.fr   */
+/*   Created: 2021/09/20 13:31:02 by edassess          #+#    #+#             */
+/*   Updated: 2021/09/20 14:15:05 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
-int main()
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+
+class Intern
 {
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-//const Animal *k = new Animal();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound();
-j->makeSound();
-delete i;
-delete j;
-}
+	public:
+		Intern(void);
+		Intern(Intern const &src);
+		~Intern(void);
+
+		Form	*makeForm(std::string formName, std::string target);
+};
+
+#endif
