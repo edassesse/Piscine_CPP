@@ -6,12 +6,13 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:12:16 by user              #+#    #+#             */
-/*   Updated: 2021/09/21 19:08:38 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/23 10:35:33 by user             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 int main(int ac, char **av)
 {
@@ -47,13 +48,13 @@ int main(int ac, char **av)
 	i = static_cast<int>(d);
 	c = static_cast<char>(d);
 	f = static_cast<float>(d);
-	if (std::numeric_limits<char>::max() < d || std::numeric_limits<char>::lowest() > d)
+	if (std::numeric_limits<char>::max() < d || std::numeric_limits<char>::lowest() > d || isnan(d))
 		std::cout << "char: impossible" << std::endl;
 	else if (std::isprint(c))
 		std::cout << "char: " << c << std::endl;
 	else
 		std::cout << "char: non displayable" << std::endl;
-	if (std::numeric_limits<int>::max() < d || std::numeric_limits<int>::lowest() > d)
+	if (std::numeric_limits<int>::max() < d || std::numeric_limits<int>::lowest() > d || isnan(d))
 		std::cout << "int: impossible" << std::endl;
 	else
 		std::cout << "int: " << i << std::endl;
