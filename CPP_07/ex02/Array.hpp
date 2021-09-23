@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 17:28:37 by user              #+#    #+#             */
-/*   Updated: 2021/09/22 18:55:00 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/23 15:04:43 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ class Array
 
 		Array<T>		&operator=(Array<T> const &rhs)
 		{
-			if (this->_n > 0)
-				delete [] this->_array;
 			this->_array = NULL;
 			if (rhs._n > 0)
 			{

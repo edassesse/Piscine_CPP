@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 15:52:32 by edassess          #+#    #+#              #
-#    Updated: 2021/09/22 17:20:36 by user             ###   ########lyon.fr    #
+#    Updated: 2021/09/23 15:08:28 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,20 +25,23 @@ SUR			=	\033[7m
 END			=	\033[0m
 
 NAME		= CPP_07
-OBJS		= $(SRCS:.cpp=.o)
+OBJS		= $(SRCS:%.cpp=%.o)
 HEADER		= whatever.hpp
 SRCS		= main.cpp
 RM			= rm -f
 CC			= clang++
-CFLAGS		= -Wall -Werror -Wextra
+CFLAGS		= -Wall -Werror -Wextra -std=c++98 -I.
 
-all:
-					@$(MAKE) $(NAME)
+all:				$(NAME)
 
 $(NAME):			$(OBJS) $(HEADER)
 					@printf "$(ERASE)"
-					@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+					@$(CC) $(CFLAGS) $(OBJS) -o $@
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
+
+%.o: %.cpp $(HEADER)
+					@$(CC) $(CFLAGS) -o $@ -c $<
+					@printf "$(ERASE)$(YELLOW)$@$(END)"
 
 clean :
 					@rm -rf $(OBJS)
@@ -49,3 +52,5 @@ fclean :			clean
 					@echo "$(RED)Fclean $(NAME) Succes !$(END)"
 
 re:					fclean all
+
+.PHONY:				all clean fclean re

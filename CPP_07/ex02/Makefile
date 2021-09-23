@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 15:52:32 by edassess          #+#    #+#              #
-#    Updated: 2021/09/22 18:58:05 by user             ###   ########lyon.fr    #
+#    Updated: 2021/09/23 14:59:59 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,8 @@ END			=	\033[0m
 
 NAME		= CPP_07
 OBJS		= $(SRCS:%.cpp=%.o)
-DEPENDS		= $(OBJS:%.o=%.d)
-HEADER		= ./Array.hpp
-SRCS		= ./main.cpp
+HEADER		= Array.hpp
+SRCS		= main.cpp
 RM			= rm -f
 CC			= clang++
 CFLAGS		= -Wall -Werror -Wextra -std=c++98 -I.
@@ -41,14 +40,11 @@ $(NAME):			$(OBJS) $(HEADER)
 					@echo "$(BOLD)$(GREEN)Compilation $(NAME) Succes !$(END)"
 
 %.o: %.cpp $(HEADER)
-					@$(CC) $(CFLAGS) -MMD -o $@ -c $<
+					@$(CC) $(CFLAGS) -o $@ -c $<
 					@printf "$(ERASE)$(YELLOW)$@$(END)"
-
--include			$(DEPENDS)
 
 clean :
 					@rm -rf $(OBJS)
-					@rm $(DEPENDS)
 					@echo "$(RED)Clean $(NAME) Succes !$(END)"
 
 fclean :			clean
