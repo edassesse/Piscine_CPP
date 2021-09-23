@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 20:36:37 by user              #+#    #+#             */
-/*   Updated: 2021/09/01 11:02:38 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 11:49:59 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Cat::Cat(void)
 {
 	this->_type = "Cat";
 	std::cout << "Cat Default constructor called" << std::endl;
-	this->_brain = new Brain();
 	return;
 }
 

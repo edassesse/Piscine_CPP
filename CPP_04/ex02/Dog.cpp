@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 20:36:37 by user              #+#    #+#             */
-/*   Updated: 2021/09/01 10:26:07 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/20 11:36:23 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ Dog::Dog(void)
 {
 	this->_type = "Dog";
 	std::cout << "Dog Default constructor called" << std::endl;
-	this->_brain = new Brain();
 	return;
 }
 

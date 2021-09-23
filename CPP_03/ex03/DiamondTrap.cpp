@@ -6,14 +6,18 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 20:36:37 by user              #+#    #+#             */
-/*   Updated: 2021/08/28 20:52:16 by user             ###   ########lyon.fr   */
+/*   Updated: 2021/09/17 13:41:28 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void)
+DiamondTrap::DiamondTrap(void) : ClapTrap("Default_clap_name")
 {
+	std::cout << "DiamondTrap default constructor called" << std::endl;
+	this->_hp = FragTrap::_hp;
+	this->_energy_point = ScavTrap::_energy_point;
+	this->_ad = FragTrap::_ad;
 	return;
 }
 
@@ -22,7 +26,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
 	this->_hp = FragTrap::_hp;
 	this->_energy_point = ScavTrap::_energy_point;
 	this->_ad = FragTrap::_ad;
-	std::cout << "DiamondTrap Default constructor called" << std::endl;
+	std::cout << "DiamondTrap constructor for " << name << " called" << std::endl;
 	return;
 }
 

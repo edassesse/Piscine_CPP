@@ -6,7 +6,7 @@
 /*   By: user <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 06:23:04 by user              #+#    #+#             */
-/*   Updated: 2021/08/27 10:39:35 by edassess         ###   ########lyon.fr   */
+/*   Updated: 2021/09/08 10:14:30 by edassess         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
+	std::cout << "oue destruct" << std::endl;
 	return;
 }
 

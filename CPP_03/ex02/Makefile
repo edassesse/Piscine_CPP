@@ -6,7 +6,7 @@
 #    By: edassess <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 15:52:32 by edassess          #+#    #+#              #
-#    Updated: 2021/08/28 20:32:15 by user             ###   ########lyon.fr    #
+#    Updated: 2021/09/17 13:38:19 by edassess         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ UNDER		=	\033[4m
 SUR			=	\033[7m
 END			=	\033[0m
 
-NAME		= ClapTrap
+NAME		= yes
 OBJS		= $(SRCS:.cpp=.o)
 HEADER		= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
