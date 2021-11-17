@@ -20,7 +20,6 @@ Contact::Contact(void)
 
 Contact::~Contact(void)
 {
-	std::cout << "oue destruct" << std::endl;
 	return;
 }
 

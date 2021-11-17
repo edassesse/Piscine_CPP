@@ -41,7 +41,6 @@ int main(int ac, char **av)
 			}
 			else
 				memory_full(contacts);
-			continue;
 		}
 		else if (command == "SEARCH")
 			search(contacts, i);
